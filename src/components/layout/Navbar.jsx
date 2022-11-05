@@ -1,8 +1,8 @@
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLightbulb, FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Navbar = ({ title }) => {
+const Navbar = ({ title, changeTheme, theme }) => {
   return (
     <nav className="navbar mb-12 shadow-lg bg-neutral text-neutral-content">
       <div className="container mx-auto">
@@ -21,6 +21,12 @@ const Navbar = ({ title }) => {
             <Link to="/about" className="btn btn-ghost btn-sm rounded-btn">
               About
             </Link>
+            <button
+              className="btn btn-ghost btn-sm rounded-btn"
+              onClick={changeTheme}
+            >
+              {theme ? <FaLightbulb /> : <FaMoon />}
+            </button>
           </div>
         </div>
       </div>
